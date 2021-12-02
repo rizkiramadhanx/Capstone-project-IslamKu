@@ -1,0 +1,117 @@
+* {
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family:sans-serif;
+}
+nav {
+    background-color: darkcyan;
+}
+.wrapper-nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  font-weight: bold;
+}
+
+.menu li{
+  display: inline;
+  list-style: none;
+  margin: 1rem;
+}
+.hero {
+ background-color: darkgoldenrod;
+}
+.hero-left  {
+  margin: 0 auto;
+}
+.hero-right {
+  padding: 2rem;
+}
+.wrapper-hero {
+  min-height: 15em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3rem;
+}
+.sholat {
+  background-color: coral;
+}
+.wrapper-sholat {
+  min-height: 15em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.search-sholat {
+  margin: 20px auto;
+}
+.search-sholat button {
+  height: 30px;
+  min-width: 500px;
+}
+.sholat-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0.1rem auto;
+  grid-column-gap: 1rem;
+}
+.card-sholat {
+  min-width: 11rem;
+  background-color: cornflowerblue;
+  min-height: 11rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid black;
+}
+.logo-sholat img {
+  max-height: 50%;
+}
+.hadist {
+  background-color: darkseagreen;
+}
+.wrapper-hadist {
+  min-height: 10em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.search-hadist {
+  margin: 20px auto;
+}
+.search-hadist button {
+  height: 30px;
+  min-width: 500px;
+}
+.card-hadist {
+  border: 2px solid black;
+  padding: 1rem;
+  margin: 4.5px;
+}
+
+footer{
+  padding: 20px;
+  color: black;
+  background-color: white;
+  text-align: center;
+}
+.spanFooter {
+  font-weight: bold;
+  color: red;
+}
