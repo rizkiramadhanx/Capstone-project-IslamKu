@@ -9,9 +9,11 @@ body {
   font-family:sans-serif;
 }
 nav {
-    background-color: darkcyan;
+  font-family: 'Poppins';
+  background-color: #318161;
 }
 .wrapper-nav {
+  color: #E5E5E5;
   width: 80%;
   margin: 0 auto;
   padding: 1rem;
@@ -19,7 +21,8 @@ nav {
   justify-content: space-between;
 }
 .logo {
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.22rem;
 }
 .menu li{
   display: inline;
@@ -27,13 +30,20 @@ nav {
   margin: 1rem;
 }
 .hero {
- background-color: darkgoldenrod;
+  font-family: 'Poppins';
+ background-color: #E5E5E5;
 }
 .hero-left  {
   margin: 0 auto;
 }
 .hero-right {
-  padding: 2rem;
+  padding: 1.5rem;
+}
+.hero-right h1 span{
+
+}
+.hero-right p {
+  margin-top: 2rem;
 }
 .wrapper-hero {
   min-height: 15em;
@@ -45,7 +55,7 @@ nav {
   grid-column-gap: 3rem;
 }
 .sholat {
-  background-color: coral;
+  background-color: #608576;
 }
 .wrapper-sholat {
   min-height: 15em;
@@ -80,7 +90,7 @@ nav {
   max-height: 50%;
 }
 .hadist {
-  background-color: darkseagreen;
+  background-color: #E5E5E5;
 }
 .wrapper-hadist {
   min-height: 10em;
