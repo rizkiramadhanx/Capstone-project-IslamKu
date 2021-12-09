@@ -117,3 +117,15 @@ nav {
   padding: 1rem;
   margin: 1px;
 }
+
+/* footer */
+footer{
+  padding: 20px;
+  color: black;
+  background-color: white;
+  text-align: center;
+}
+.spanFooter {
+  font-weight: bold;
+  color: red;
+}
