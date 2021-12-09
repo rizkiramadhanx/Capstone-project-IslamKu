@@ -16,11 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-<<<<<<< HEAD
-   "@babel/core": "^7.10.3",
-=======
     "@babel/core": "^7.10.3",
->>>>>>> 2676b12a0d5195331f85471d22765b2eefe8ce3b
     "@babel/preset-env": "^7.10.3",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.0.2",
