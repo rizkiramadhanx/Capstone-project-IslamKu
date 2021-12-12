@@ -3,48 +3,87 @@
   margin: 0px;
   padding: 0px;
 }
+
 body {
   margin: 0px;
   padding: 0px;
   font-family:sans-serif;
 }
+
 nav {
   font-family: 'Poppins';
   background-color: #318161;
 }
+
+.header__menu {
+  font-size: 32px;
+  margin: 10px auto;
+  display: block;
+  width: 100%;
+  color: blue;
+}
+
 .wrapper-nav {
-  color: #E5E5E5;
+  padding: 8px 16px;
+  background-color: #318161;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  /* color: #E5E5E5;
   width: 80%;
   margin: 0 auto;
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
+
 .logo {
   font-weight: 700;
   font-size: 1.22rem;
+  display: flex;
+  align-items: center;
 }
-.menu li{
-  display: inline;
-  list-style: none;
-  margin: 1rem;
+
+.menu {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 100%;
+  transition: all 0.3s;
+  padding: 8px;
+  overflow: hidden;
 }
+
+.menu-item {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 24%;
+  text-align: right;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
 .hero {
   font-family: 'Poppins';
  background-color: #E5E5E5;
 }
+
 .hero-left  {
   margin: 0 auto;
 }
+
 .hero-right {
   padding: 1.5rem;
 }
-.hero-right h1 span{
 
-}
 .hero-right p {
   margin-top: 2rem;
 }
+
 .wrapper-hero {
   min-height: 15em;
   width: 80%;
@@ -54,9 +93,11 @@ nav {
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 3rem;
 }
+
 .sholat {
   background-color: #608576;
 }
+
 .wrapper-sholat {
   min-height: 15em;
   width: 80%;
@@ -65,23 +106,28 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
 .search-sholat {
   margin: 20px auto;
   background-color:lightslategrey
 }
+
 .search-sholat input {
   height: 30px;
   min-width: 500px;
 }
+
 .fa {
   padding: 0 8px;
 }
+
 .sholat-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin: 1.5rem auto;
   grid-column-gap: 3rem;
 }
+
 .card-sholat {
   min-width: 11rem;
   background-color: cornflowerblue;
@@ -90,12 +136,15 @@ nav {
   flex-direction: column;
   text-align: center;
 }
+
 .logo-sholat img {
   max-height: 50%;
 }
+
 .hadist {
   background-color: #E5E5E5;
 }
+
 .wrapper-hadist {
   min-height: 10em;
   width: 80%;
@@ -104,18 +153,60 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
 .search-hadist {
   margin: 20px auto;
   background-color:lightslategrey
 }
+
 .search-hadist input {
   height: 30px;
   min-width: 500px;
 }
+
 .card-hadist {
   border: 1px solid black;
   padding: 1rem;
   margin: 1px;
+}
+
+.drawer {
+  /* width: 100%;
+  padding: 0;
+  margin: 0%; */
+  display: flex;
+  align-items: center;
+}
+
+.drawer a {
+  display: inline-block;
+  padding: 1em;
+  text-decoration: none;
+  color: red;
+}
+
+.drawer a:hover {
+  text-decoration: underline;
+}
+
+
+
+/*Skip to content*/
+.skip a{
+  padding: 20px;
+  position: absolute;
+  top: -60px;
+  left: 0;
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: .25rem;
+  background-color: red;
+}
+
+.skip a:focus{
+  top: 20px;
+  left: 20px;
 }
 
 /* footer */

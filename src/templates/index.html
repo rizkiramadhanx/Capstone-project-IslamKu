@@ -11,17 +11,41 @@
   <title>Document</title>
 </head>
 <body>
-  <a href="#"></a>
-  <nav>
-     <div class="wrapper-nav">       
+
+  <header class="wrapper-nav">
+    <div class="drawer">
+      <button id="drawer">☰</button>
+    </div>
+    <div class="logo"><h3>IslamKu</h3></div>
+    <nav id="menu" class="logo">
+      <ul>
+        <li class="menu-item"><a href=""></a>Home</li>
+        <li class="menu-item"><a href=""></a>Berita</li>
+        <li class="menu-item"><a href=""></a>Lainnya</li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- <button id="menu" class="header_menu">☰</button>
+  <nav id="drawer" class="drawer">
+     <div class="wrapper-nav">  
        <div class="logo">IslamKu</div>
-       <div class="menu"><ul>
+       <div class="menu" tabindex="0"><ul>
          <li><a href="index.html"></a> Home</li>
          <li><a href="#/berita"></a> Berita</li>
          <li>Lainya</li>
         </ul></div>
      </div>
-  </nav>
+  </nav> -->
+  <!-- <button id="menu" class="header_menu">☰</button>
+  <nav id="drawer" class="drawer">
+    <div class="menu" tabindex="0"><ul>
+      <li class="menu-item"><a href="index.html"></a>Home</li>
+      <li class="menu-item"><a href="#/Berita"></a>Berita</li>
+      <li class="menu-item">Lainya</li>
+    </ul></div>
+  </nav> -->
+  <div class="skip"><a href="#content">skip to content</a></div>
   <div class="hero">
     <div class="wrapper-hero">
     <div class="hero-left"><img src="./assets/image/samples-svgrepo-com.svg" height="200px" alt="Berdoa"></div>
@@ -81,6 +105,9 @@
         </div>
     </div>
   </div>
+
+  <main id="content"></main>
+
   <footer>
     <p>Copyright &copy; 2021 - <span class="spanFooter"> IslamKu </span></p>
   </footer>

@@ -1,0 +1,122 @@
+@media screen and (max-width: 499px) {
+    .nav {
+        z-index: 10;
+        background-color: #fff;
+        width: 300px;
+        position: absolute;
+        -webkit-transform: translate(-300px, 0);
+        transform: translate(-300px, 0);
+        transition: transform 0.3s ease;
+    }
+
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .wrapper-nav {
+        display: list-item;
+        border-bottom: 1px solid #e0e0e0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .sholat-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .wrapper-hero {
+        min-height: 15em;
+        width: 80%;
+        margin: 0 auto;
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 3rem;
+    }
+
+    .search-sholat input {
+        height: 30px;
+        min-width: 50px;
+    }
+
+    .search-hadist input {
+        height: 30px;
+        min-width: 50px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .wrapper-hero {
+        min-height: 15em;
+        width: 80%;
+        margin: 0 auto;
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 3rem;
+    }
+
+    .sholat-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .search-sholat input {
+        height: 30px;
+        min-width: 200px;
+    }
+
+    .search-hadist input {
+        height: 30px;
+        min-width: 200px;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    .sholat-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .search-sholat input {
+        height: 30px;
+        min-width: 350px;
+    }
+
+    .search-hadist input {
+        height: 30px;
+        min-width: 350px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
+    .sholat-content {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .search-sholat input {
+        height: 30px;
+        min-width: 500px;
+    }
+
+    .search-hadist input {
+        height: 30px;
+        min-width: 500px;
+      }
+}
