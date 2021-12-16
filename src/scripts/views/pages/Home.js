@@ -1,6 +1,6 @@
 import { async } from "regenerator-runtime";
 import DatabaseSource from "../../data/db-source";
-import { createListJadwalSholat, createListKota } from "../templates/template-creator";
+import { createDoaHasilSearch, createListJadwalSholat, createListKota } from "../templates/template-creator";
 
 const Home = {
   async render() {
@@ -16,60 +16,54 @@ const Home = {
   </div>
   <div class="sholat">
     <div class="wrapper-sholat">
-      <div class="search-sholat"><input id="hasilSearch" list="kota" type="text" placeholder=" Cari kota..."><a href="#" class="fa fa-search"></a>
+      <div class="search-sholat"><input id="hasilSearchSholat" list="kota" type="text" placeholder=" Cari kota..."><a href="#" class="fa fa-search"></a>
       <datalist id="kota">
       <div id="daftarKota"></div>
-      </datalist>
+      </da
       </div>
       <div class="sholat-content">
       </div>
     </div>
   </div>
-  <div class="hadist">
-    <div class="wrapper-hadist">
-         <div class="search-hadist"><input type="text" placeholder=" Cari Hadist"><a href="#" class="fa fa-search"></a></div>
-        <div class="card-hadist">
-          <div class="nama-hadist"><h4>Bukhori Muslim</h4></div>
-          <div class="isi-hadist">Lorem ipsum dolor sit amet consectetur.</div>
-        </div>
-        <div class="card-hadist">
-          <div class="nama-hadist"><h4>Bukhori Muslim</h4></div>
-          <div class="isi-hadist">Lorem ipsum dolor sit amet consectetur.</div>
-        </div>
-        <div class="card-hadist">
-          <div class="nama-hadist"><h4>Bukhori Muslim</h4></div>
-          <div class="isi-hadist">Lorem ipsum dolor sit amet consectetur.</div>
-        </div>
+  <div class="doa">
+    <div class="wrapper-doa">
+         <div class="search-doa"><input type="text" placeholder=" Cari Hadist"><a href="#" class="fa fa-search"></a></div>
+         <div class="wrapper-doa-detail"></div>
     </div>
   </div>
     `;
   },
   async afterRender() {
+    // list pencarian kota
     const daftarKota = await DatabaseSource.daftarKota();
     const daftarKotaContainer = document.querySelector('#daftarKota');
     daftarKota.forEach((kota) => {
       daftarKotaContainer.innerHTML += createListKota(kota.lokasi);
     });
 
+    // sholat (loading)
     const hasilSearch = document.querySelector('.search-sholat a');
     const boxSholat = document.querySelector('.sholat-content');
 
-    const dummy = await DatabaseSource.jadwalSholat(1609);
-    console.log(dummy);
-    // dummy.forEach((sholat) => {
-    //   boxSholat.innerHTML += createListJadwalSholat(sholat.data.jadwal);
+    const dataSholatDefault = await DatabaseSource.jadwalSholat(1609)
+    boxSholat.innerHTML = createListJadwalSholat(dataSholatDefault);
+
+    // Doa doa (loading)
+    // const dataDoaDefault = await DatabaseSource.semuaListDoa();
+    const doaContainer = document.querySelector('.wrapper-doa-detail');
+    doaContainer.innerHTML += createDoaHasilSearch(); // error cors
+    // console.log(dataDoaDefault);
+    
+    // hasilSearch.addEventListener("click",async () => {
+    //   const valueSearch = await document.querySelector('#hasilSearchSholat').value;
+    //   const idValueSearch = await DatabaseSource.cariBerdasarkanKota(valueSearch);
+    //   const DataBoxSholat = await DatabaseSource.jadwalSholat(JSON.stringify(idValueSearch.id));
     // });
 
-    boxSholat.innerHTML = createListJadwalSholat(dummy);
-    
-    hasilSearch.addEventListener("click",async () => {
-      const valueSearch = await document.querySelector('#hasilSearch').value;
-      const idValueSearch = await DatabaseSource.cariBerdasarkanKota(valueSearch);
-      const DataBoxSholat = await DatabaseSource.jadwalSholat(JSON.stringify(idValueSearch.id));
-      // DataBoxSholat.forEach((sholat) => {
-      //   boxSholat.innerHTML += createListJadwalSholat()
-      // });
-      console.log(idValueSearch);
+    const hasilSearchDoa = document.querySelector('.search-doa a');
+
+    hasilSearchDoa.addEventListener("click", async () => {
+      // const valueSearchDoa = await
     });
   },
 };
