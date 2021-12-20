@@ -1,6 +1,6 @@
 import { async } from "regenerator-runtime";
 import DatabaseSource from "../../data/db-source";
-import { createDoaHasilSearch, createListJadwalSholat, createListKota } from "../templates/template-creator";
+import { createListJadwalSholat, createListKota } from "../templates/template-creator";
 
 const Home = {
   async render() {
@@ -16,55 +16,62 @@ const Home = {
   </div>
   <div class="sholat">
     <div class="wrapper-sholat">
-      <div class="search-sholat"><input id="hasilSearchSholat" list="kota" type="text" placeholder=" Cari kota..."><a href="#" class="fa fa-search"></a>
+      <div class="search-sholat"><input id="hasilSearch" list="kota" type="text" placeholder=" Cari kota..."><a href="#" class="fa fa-search"></a>
       <datalist id="kota">
       <div id="daftarKota"></div>
-      </da
+      </datalist>
       </div>
       <div class="sholat-content">
       </div>
     </div>
   </div>
-  <div class="doa">
+    <div class="doa">
     <div class="wrapper-doa">
          <div class="search-doa"><input type="text" placeholder=" Cari Hadist"><a href="#" class="fa fa-search"></a></div>
-         <div class="wrapper-doa-detail"></div>
+         <div class="wrapper-doa-detail">
+      <div class="doa-judul">doa sholat Subuh</div>
+      <div class="doa-arab">أُصَلِّى فَرْضَ الصُّبْح رَكَعتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لله تَعَال</div>
+      <div class="doa-latin"><p>Latin :</p>"Usholli Fardlon dhuhri Arba'a Rok'aataim Mustaqbilal Qiblati Adaa-an Lillahi ta'aala"</div>
+      <div class="doa-arti"><p>Artinya :</p> "Aku niat melakukan sholat fardu dhuhur 4 rakaat, sambil menghadap qiblat, saat ini, karena Allah ta'ala"</div>
+    </div>
     </div>
   </div>
     `;
   },
   async afterRender() {
-    // list pencarian kota
+       // list pencarian kota
     const daftarKota = await DatabaseSource.daftarKota();
     const daftarKotaContainer = document.querySelector('#daftarKota');
     daftarKota.forEach((kota) => {
       daftarKotaContainer.innerHTML += createListKota(kota.lokasi);
     });
 
-    // sholat (loading)
     const hasilSearch = document.querySelector('.search-sholat a');
     const boxSholat = document.querySelector('.sholat-content');
 
-    const dataSholatDefault = await DatabaseSource.jadwalSholat(1609)
+    // data default sholat
+    const dataSholatDefault = await DatabaseSource.jadwalSholat(1609);
+    console.log(dataSholatDefault);
     boxSholat.innerHTML = createListJadwalSholat(dataSholatDefault);
-
-    // Doa doa (loading)
-    // const dataDoaDefault = await DatabaseSource.semuaListDoa();
-    const doaContainer = document.querySelector('.wrapper-doa-detail');
-    doaContainer.innerHTML += createDoaHasilSearch(); // error cors
-    // console.log(dataDoaDefault);
     
-    // hasilSearch.addEventListener("click",async () => {
-    //   const valueSearch = await document.querySelector('#hasilSearchSholat').value;
-    //   const idValueSearch = await DatabaseSource.cariBerdasarkanKota(valueSearch);
-    //   const DataBoxSholat = await DatabaseSource.jadwalSholat(JSON.stringify(idValueSearch.id));
-    // });
+    // data setelah search setelah click
 
-    const hasilSearchDoa = document.querySelector('.search-doa a');
-
-    hasilSearchDoa.addEventListener("click", async () => {
-      // const valueSearchDoa = await
+    // error 1 : saya ingin mengisi data sholat sesuai dengan value input variabel ValueSearch
+    // file yang berhubungan db-source.js,Home.js,api-endpoint.js
+    // API : https://api.myquran.com/v1/sholat
+    hasilSearch.addEventListener("click", async () => {
+      const valueSearch = await document.querySelector('#hasilSearch').value;
+      const idValueSearch = await DatabaseSource.cariBerdasarkanKota(valueSearch);
+      const DataBoxSholatHasilPencarian = await DatabaseSource.jadwalSholat(JSON.stringify(idValueSearch.id)); 
+      boxSholat.innerHTML = createListJadwalSholat(DataBoxSholatHasilPencarian);
+      console.log(idValueSearch);
     });
+
+    // error 2 masalah tentang cors dan origin
+    // file yang berhubungan db-source.js,Home.js,api-endpoint.js
+    // API : https://doa-doa-api-ahmadramadhan.fly.dev/api
+    dataDoaDefault = await DatabaseSource.randomDoa();
+    console.log(dataDoaDefault);
   },
 };
 
