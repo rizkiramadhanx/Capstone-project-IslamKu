@@ -160,7 +160,8 @@ nav {
   font-family: "Poppins";
   margin-top: 1rem;
 }
-
+ 
+/* Hadist  */
 .hadist {
   background-color: #E5E5E5;
 }
@@ -188,6 +189,65 @@ nav {
   border: 1px solid black;
   padding: 1rem;
   margin: 1px;
+}
+
+/* Doa */
+
+.doa {
+  background-color: #E5E5E5;
+}
+
+.wrapper-doa {
+  min-height: 10em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-doa-detail {
+  min-height: 10em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-doa {
+  margin: 20px auto;
+  background-color:lightslategrey
+}
+
+.search-doa input {
+  height: 30px;
+  min-width: 500px;
+}
+.doa-judul {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins";
+}
+.doa-arab {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.doa-latin {
+  text-align: center;
+   margin-bottom: 1.5rem;
+}
+.doa-latin p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.doa-arti {
+  text-align: center;
+   margin-bottom: 1.5rem;
+}
+.doa-arti p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .drawer {

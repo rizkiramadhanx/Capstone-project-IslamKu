@@ -18,6 +18,14 @@ class DatabaseSource {
     const response = await fetch(API_ENDPOINT.JADWAL_SHOLAT(id,today.getFullYear(),today.getMonth(),today.getDate()));
     return response.json();
   }
+  static async semuaListDoa() {
+    const response = await fetch(API_ENDPOINT.DAFTAR_DOA);
+    return response.json();
+  }
+  static async randomDoa() {
+    const response = await fetch(API_ENDPOINT.DOA_RANDOM,{mode: 'no-cors '});
+    return response.json();
+  }
 }
 
 export default DatabaseSource;
