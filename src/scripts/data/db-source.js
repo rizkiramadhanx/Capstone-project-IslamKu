@@ -23,8 +23,17 @@ class DatabaseSource {
     return response.json();
   }
   static async randomDoa() {
-    const response = await fetch(API_ENDPOINT.DOA_RANDOM,{mode: 'no-cors '});
+    const response = await fetch(API_ENDPOINT.DOA_RANDOM,{mode: 'no-cors'});
     return response.json();
+  }
+  static async semuaDoa() {
+    const response = await fetch('https://islamic-api-zhirrr.vercel.app/api/doaharian');
+    return response.json();
+  }
+  static async doaBerdasarkanSearch() {
+    const response = await fetch('https://islamic-api-zhirrr.vercel.app/api/doaharian');
+    const ab = response.json();
+    return ab;
   }
 }
 
