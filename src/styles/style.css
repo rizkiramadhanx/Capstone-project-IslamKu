@@ -241,6 +241,9 @@ nav {
   text-align: center;
    margin-bottom: 1.5rem;
 }
+.doa-latin ul li {
+  list-style-type: none;
+}
 .doa-latin p {
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -250,6 +253,64 @@ nav {
    margin-bottom: 1.5rem;
 }
 .doa-arti p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* alquran */
+alquran {
+  background-color: #33ce90;
+}
+
+.wrapper-alquran {
+  min-height: 10em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-alquran-detail {
+  min-height: 10em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-alquran {
+  margin: 20px auto;
+  background-color:lightslategrey
+}
+
+.search-alquran input {
+  height: 30px;
+  min-width: 500px;
+}
+.alquran-judul {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins";
+}
+.alquran-arab {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.alquran-latin {
+  text-align: center;
+   margin-bottom: 1.5rem;
+}
+.alquran-latin p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.alquran-arti {
+  text-align: center;
+   margin-bottom: 1.5rem;
+}
+.alquran-arti p {
     margin-bottom: 0.5rem;
     font-weight: bold;
 }

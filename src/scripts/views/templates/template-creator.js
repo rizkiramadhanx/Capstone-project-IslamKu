@@ -32,6 +32,16 @@ const createDoa = (doa) => `<div class="doa-judul">${doa.title}</div>
 
 const createListDoa = (doa) => `<option value="${doa}">`;
 
+const createListAlquran = (surat) => `<option value="${surat}">`;
+
+const createAlquran = (surat) => `<div class="doa-judul">${surat.name.long} (${surat.name.transliteration.id})</div>
+                                  <div class="doa-latin"><ul>
+                                  <li>Arti bahasa : ${surat.name.translation.id}</li>
+                                  <li>Merupakan Surat : ${surat.revelation.id}</li>
+                                  <li>Surat ke : ${surat.number} dengan sebanyak ${surat.sequence} ayat</li>
+                                  </ul></div>
+                                  <div class="doa-arti"><p>Informasi Surat</p> : ${surat.tafsir.id}</div>`;
+
 const createKotaSholat = (jadwal) => `Jadwal Sholat Untuk ${jadwal.data.lokasi}`;
 
-export { createListKota,createListJadwalSholat,createDoa, createListDoa, createKotaSholat };
+export { createListKota,createListJadwalSholat,createDoa, createListDoa, createKotaSholat, createListAlquran, createAlquran };

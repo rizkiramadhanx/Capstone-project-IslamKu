@@ -35,6 +35,10 @@ class DatabaseSource {
     const ab = response.json();
     return ab;
   }
+  static async alquran() {
+  const response = await fetch('https://api.quran.sutanlab.id/surah');
+  return response.json();
+  }
 }
 
 export default DatabaseSource;

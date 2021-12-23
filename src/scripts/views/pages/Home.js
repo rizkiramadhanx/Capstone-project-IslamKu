@@ -11,7 +11,7 @@ const Home = {
     <div class="hero-left"><img src="./image/praying.png" height="200px" alt=""></div>
       <div class="hero-right">
         <h2>Mari belajar islam bersama <span>Islamku</span></h2>
-        <p>Aplikasi Informasi mengenai </p>
+        <p>Aplikasi <b>Islamku</b> adalah aplikasi utilitas yang bisa digunakan muslim untuk membantu seorang muslim dapat beribadah dengan baik, dengan aplikasi user dapat melihat informasi seperti jadwal sholat, doa harian dan hadist.</p>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@ const Home = {
       </div>
     </div>
   </div>
-    <div class="doa">
+  <div class="doa">
     <div class="wrapper-doa">
          <div class="search-doa"><input id='hasilSearchDoa' type="text" list="doaList" placeholder=" Cari Doa"><a href="#" class="fa fa-search"></a>
           <datalist id="doaList">
@@ -92,9 +92,7 @@ const Home = {
       const dataDoaAkhir =  await dataValueDoa[0];
 
       doaContainer.innerHTML = createDoa(dataDoaAkhir);
-    
     });
-
   },
 };
 
