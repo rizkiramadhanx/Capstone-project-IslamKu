@@ -1,7 +1,7 @@
 import DatabaseSource from "../../data/db-source";
 import { createAlquran, createListAlquran } from "../templates/template-creator";
 
-const Hadist = {
+const Alquran = {
   async render() {
     return `<div class="hero">
     <div class="wrapper-hero">
@@ -14,7 +14,7 @@ const Hadist = {
   </div>
    <div class="alquran">
     <div class="wrapper-alquran">
-         <div class="search-alquran"><input id='hasilSearchAlquran' type="text" list="alquranList" placeholder=" Cari alquran"><a href="#" class="fa fa-search"></a>
+         <div class="search-alquran"><input id='hasilSearchAlquran' type="text" list="alquranList" placeholder=" Cari alquran"><a href="#/alquran" class="fa fa-search"></a>
           <datalist id="alquranList">
           <div id="daftarAlquran"></div>
          </datalist>
@@ -30,7 +30,6 @@ const Hadist = {
     const alquranContainer = document.querySelector('.wrapper-alquran-detail');
     const dataAlquranDefault = dataAlquran.data[0];
 
-    console.log(dataAlquranDefault);
 
     alquranContainer.innerHTML = createAlquran(dataAlquranDefault);
 
@@ -43,15 +42,18 @@ const Hadist = {
       DaftarAlquranContainer.innerHTML += createListAlquran(surat.name.transliteration.id)
     });
 
-    const buttonSearchAlquran = document.querySelector('#hasilSearchAlquran');
+    const buttonSearchAlquran = document.querySelector('.search-alquran a');
     
     buttonSearchAlquran.addEventListener("click", async (e) => {
       e.preventDefault();
-      const valueSearchAlquran = document.querySelector('#hasilSearchAlquran');
-      // const dataAlquran
+      const valueSearchAlquran = document.querySelector('#hasilSearchAlquran').value;
+      const dataSearchAlquran = await DatabaseSource.alquran();
+      const dataValueAlquran = await dataSearchAlquran.data.filter(e => e.name.translation.id == valueSearchAlquran);
+      const dataAlquranAkhir = await dataValueAlquran[0];
 
+      alquranContainer.innerHTML = createAlquran(dataAlquranAkhir);
     })
   },
 }
 
-export default Hadist;
+export default Alquran;
