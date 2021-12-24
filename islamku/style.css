@@ -1,0 +1,94 @@
+* {
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family:sans-serif;
+}
+nav {
+  font-family: 'Poppins';
+  background-color: #318161;
+}
+.wrapper-nav {
+  color: #E5E5E5;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.22rem;
+}
+.menu li{
+  display: inline;
+  list-style: none;
+  margin: 1rem;
+}
+.hero {
+  font-family: 'Poppins';
+ background-color: #E5E5E5;
+}
+.hero-left  {
+  margin: 0 auto;
+}
+.hero-right {
+  padding: 1.5rem;
+}
+.hero-right h1 span{
+
+}
+.hero-right p {
+  margin-top: 2rem;
+}
+.wrapper-hero {
+  min-height: 15em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3rem;
+}
+.sholat-detail {
+  background-color: #608576;
+}
+.wrapper-sholat-detail {
+  min-height: 10em;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.niat-judul {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins";
+}
+.niat-arab {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.niat-latin {
+  text-align: center;
+   margin-bottom: 1.5rem;
+}
+.niat-latin p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.niat-arti {
+  text-align: center;
+   margin-bottom: 1.5rem;
+}
+.niat-arti p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
